@@ -19,9 +19,10 @@
        * 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
        */
 
-      /* MAIN COLOR:#d9480f
-        * SHADES: #f76707
-        * GRAY COLOR: #343a40
+      /* MAIN COLOR:#0b7285
+        * SHADES: #1098ad
+        * GRAY COLOR1: #ced4da
+        * GRAY COLOR2: #adb5bd
         * 
         */
 
@@ -29,6 +30,7 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        line-height: 1;
       }
 
       /* ------------------------ */
@@ -38,9 +40,227 @@
         font-family: "Inter", sans-serif;
         color: #343a40;
       }
+
+      .accordian {
+        width: 700px;
+        margin: 100px auto;
+
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .item {
+        box-shadow: 0 0 36px rgba(0, 0, 0, 0.1);
+        padding: 24px;
+
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        column-gap: 24px;
+        row-gap: 32px;
+        align-items: center;
+      }
+
+      .number,
+      .title {
+        font-size: 24px;
+        font-weight: 700;
+        /* color: #0b7285; */
+      }
+
+      .number {
+        color: #ced4da;
+      }
+
+      .btn-icon {
+        border: none;
+        background-color: transparent;
+        width: 24px;
+        cursor: pointer;
+      }
+
+      .icon {
+        width: 24px;
+        height: 24px;
+        stroke: #0b7285;
+
+        transition: 400ms ease-in-out;
+      }
+
+      .hidden-body {
+        grid-column: 2;
+        display: none;
+      }
+
+      .hidden-body p {
+        line-height: 1.6;
+        margin-bottom: 24px;
+      }
+
+      .hidden-body ul {
+        color: #adb5bd;
+        margin-left: 18px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .expanded {
+        border-top: 4px solid #3bc9db;
+      }
+
+      .expanded .hidden-body {
+        display: block;
+      }
+
+      .expanded .number, .expanded .title {
+        color: #0b7285;
+      }
+
+      .expanded .icon {
+        transform: rotate(-180deg);
+      }
     </style>
   </head>
   <body>
-    
+    <div class="accordian">
+      <div class="item">
+        <p class="number">01</p>
+        <p class="title">Where are these chairs assembled?</p>
+        <button type="button" class="btn-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="3"
+            stroke="currentColor"
+            class="icon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+            />
+          </svg>
+        </button>
+        <div class="hidden-body">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+            accusamus harum fugiat illum, doloribus aliquid quidem voluptatum
+            voluptates. Eligendi doloribus asperiores ipsum voluptates eos, esse
+            libero aperiam unde.
+          </p>
+          <ul>
+            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+            <li>
+              Ugit maiores cum corrupti impedit tempora repellat, fugiat
+              deleniti.
+            </li>
+            <li>
+              Eligendi doloribus asperiores ipsum voluptates eos, esse libero
+              aperiam unde.
+            </li>
+            <li>Odit, officia blanditiis!</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item expanded">
+        <p class="number">02</p>
+        <p class="title">How long do I have to return my chair?</p>
+        <button type="button" class="btn-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="3"
+            stroke="currentColor"
+            class="icon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+            />
+          </svg>
+        </button>
+        <div class="hidden-body">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+            accusamus harum fugiat illum, doloribus aliquid quidem voluptatum
+            voluptates. Eligendi doloribus asperiores ipsum voluptates eos, esse
+            libero aperiam unde.
+          </p>
+          <ul>
+            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+            <li>
+              Ugit maiores cum corrupti impedit tempora repellat, fugiat
+              deleniti.
+            </li>
+            <li>
+              Eligendi doloribus asperiores ipsum voluptates eos, esse libero
+              aperiam unde.
+            </li>
+            <li>Odit, officia blanditiis!</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item">
+        <p class="number">03</p>
+        <p class="title">Do you ship to countries outside EU?</p>
+        <button type="button" class="btn-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="3"
+            stroke="currentColor"
+            class="icon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+            />
+          </svg>
+        </button>
+        <div class="hidden-body">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+            accusamus harum fugiat illum, doloribus aliquid quidem voluptatum
+            voluptates. Eligendi doloribus asperiores ipsum voluptates eos, esse
+            libero aperiam unde.
+          </p>
+          <ul>
+            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+            <li>
+              Ugit maiores cum corrupti impedit tempora repellat, fugiat
+              deleniti.
+            </li>
+            <li>
+              Eligendi doloribus asperiores ipsum voluptates eos, esse libero
+              aperiam unde.
+            </li>
+            <li>Odit, officia blanditiis!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </body>
+  <script>
+    const items = document.getElementsByClassName("item");
+    // console.log(hiddenBody);
+    const buttons = document.getElementsByClassName("btn-icon");
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+      const btn = buttons[i];
+
+      btn.addEventListener("click", () => {
+        // console.log('hide toggle');
+        item.classList.toggle("expanded");
+      });
+    }
+  </script>
 </html>
