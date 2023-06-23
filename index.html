@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Title</title>
+    <title>Carousel</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,28 +19,186 @@
        * 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
        */
 
-      /* MAIN COLOR:#d9480f
-        * SHADES: #f76707
-        * GRAY COLOR: #343a40
-        * 
-        */
-
+      /* MAIN COLOR:#e03131
+       * SHADES: #ffe3e3
+       * SHADES: #ffc9c9
+       * GRAY COLOR1: #ced4da
+       * GRAY COLOR2: #adb5bd
+       * 
+       */
+      /* ------------------------ */
+      /* GENERAL STYLES */
+      /* ------------------------ */
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
 
-      /* ------------------------ */
-      /* GENERAL STYLES */
-      /* ------------------------ */
       body {
         font-family: "Inter", sans-serif;
         color: #343a40;
+        line-height: 1;
       }
+
+      .carousel {
+        background-color: #e03131;
+        border-radius: 8px;
+        width: 800px;
+        margin: 80px auto;
+        padding: 32px 48px 32px 86px;
+
+        display: flex;
+        position: relative;
+        gap: 86px;
+        align-items: center;
+      }
+
+      .author-img {
+        width: 200px;
+        height: 200px;
+        border-radius: 8px;
+        transform: scale(1.5);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      }
+
+      .testimonial-text {
+        color: #ffe3e3;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.5;
+        margin-bottom: 32px;
+      }
+      .testimonial-author {
+        color: #ffc9c9;
+        font-size: 14px;
+        margin-bottom: 4px;
+      }
+      .testimonial-author-job {
+        color: #ffc9c9;
+        font-size: 12px;
+      }
+
+      .btn {
+        border: none;
+        background: #fff;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+
+        box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn--left {
+        left: 0;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .btn--right {
+        right: 0;
+        top: 50%;
+        transform: translate(50%, -50%);
+      }
+
+      .btn-icon {
+        width: 24px;
+        height: 24px;
+        stroke: #e03131;
+        stroke-width: 2;
+      }
+
+      .dots {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 32px);
+
+        display: flex;
+        gap: 12px;
+      }
+
+      .dot {
+        height: 12px;
+        width: 12px;
+        border: 2px solid #e03131;
+        border-radius: 50%;
+      }
+
+      .dot--active {
+        background-color: #e03131;
+      }
+
     </style>
   </head>
   <body>
-    
+    <div class="carousel">
+      <img src="./img/maria.jpg" alt="maria mama MIA" class="author-img" />
+
+      <blockquote class="testimonial">
+        <p class="testimonial-text">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            fill="#000000"
+            viewBox="0 0 256 256"
+          >
+            <path
+              d="M100,56H40A16,16,0,0,0,24,72v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,100,56Zm0,80H40V72h60ZM216,56H156a16,16,0,0,0-16,16v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,216,56Zm0,80H156V72h60Z"
+            ></path>
+          </svg>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum sapiente
+          quidem aliquam praesentium, expedita rem! Est iure pariatur deserunt
+          blanditiis dolorem ipsum voluptas
+        </p>
+        <p class="testimonial-author">Maria DB</p>
+        <p class="testimonial-author-job">Database Manager @ AWS</p>
+      </blockquote>
+
+      <button class="btn btn--left">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="btn-icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5L8.25 12l7.5-7.5"
+          />
+        </svg>
+      </button>
+      <button class="btn btn--right">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="btn-icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M8.25 4.5l7.5 7.5-7.5 7.5"
+          />
+        </svg>
+      </button>
+      <div class="dots">
+        <button class="dot dot--active">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+      </div>
+    </div>
   </body>
 </html>
