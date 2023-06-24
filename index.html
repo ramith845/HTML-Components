@@ -36,6 +36,13 @@
       /* ------------------------ */
       /* GENERAL STYLES */
       /* ------------------------ */
+      @media screen and (min-width: 960px) {
+        html {
+          margin-left: calc(100vw - 100%);
+          margin-right: 0;
+        }
+      }
+
       body {
         font-family: "Inter", sans-serif;
         color: #343a40;
@@ -84,7 +91,7 @@
         height: 24px;
         stroke: #0b7285;
 
-        transition: 400ms ease-in-out;
+        transition: transform 400ms;
       }
 
       .hidden-body {
@@ -114,7 +121,8 @@
         display: block;
       }
 
-      .expanded .number, .expanded .title {
+      .expanded .number,
+      .expanded .title {
         color: #0b7285;
       }
 
