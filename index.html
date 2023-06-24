@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Title</title>
+    <link rel="icon" href="./img/angular.png" />
+    <title>Pagination</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,9 +20,10 @@
        * 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
        */
 
-      /* MAIN COLOR:#d9480f
-        * SHADES: #f76707
+      /* MAIN COLOR:#fcc419
+        * SHADES: #ffd43b
         * GRAY COLOR: #343a40
+        * GRAY COLOR: #868e96
         * 
         */
 
@@ -37,10 +39,124 @@
       body {
         font-family: "Inter", sans-serif;
         color: #343a40;
+        line-height: 1;
+        display: flex;
+        justify-content: center;
+      }
+
+      .pagination {
+        margin: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .btn {
+        width: 48px;
+        height: 48px;
+        border: 2px solid #fcc419;
+        border-radius: 50%;
+        background-color: transparent;
+        cursor: pointer;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .btn:hover {
+        background-color: #ffd43b;
+      }
+      
+      .btn:hover .icon {
+        stroke: white;
+      }
+      
+      .icon {
+        width: 24px;
+        height: 24px;
+        stroke: #fcc419;
+      }
+
+      /* here for .page--link:link has more priority (2) 
+       * and .active below has low specificity (1). Hence it
+       * black color was taking priority eventhough the 
+       * element was active. Hence, we add .page--link.active(2) at HERE✅
+       * and last rule gets applied
+       */
+      .page--link:link,
+      .page--link:visited {
+        font-size: 18px;
+        font-weight: 500;
+        color: #343a40;
+        text-decoration: none;
+        border: none;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* HERE✅*/
+      .page--link:hover,
+      .page--link:active,
+      .page--link.active {
+        color: #fff;
+        background-color: #ffd43b;
+      }
+
+      .dots {
+        color: #868e96;
+        letter-spacing: 2px;
       }
     </style>
   </head>
   <body>
-    
+    <div class="pagination">
+      <button class="btn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5L8.25 12l7.5-7.5"
+          />
+        </svg>
+      </button>
+      <a href="#" class="page--link">1</a>
+      <a href="#" class="page--link">2</a>
+      <a href="#" class="page--link">3</a>
+      <a href="#" class="page--link active">4</a>
+      <a href="#" class="page--link">5</a>
+      <a href="#" class="page--link">6</a>
+      <span class="dots">...</span>
+      <a href="#" class="page--link">23</a>
+      <button class="btn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M8.25 4.5l7.5 7.5-7.5 7.5"
+          />
+        </svg>
+      </button>
+    </div>
   </body>
 </html>
