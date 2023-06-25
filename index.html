@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -37,10 +37,103 @@
       body {
         font-family: "Inter", sans-serif;
         color: #343a40;
+        line-height: 1;
       }
+
+      .container {
+        height: 100vh;
+        /* width: 100%; */
+        /* background-color: #343a40; */
+        display: flex;
+        /* flex: 1 1 75px; */
+      }
+      
+      .side--navbar {
+        font-size: 20px;
+        font-weight: 600;
+        /* width: 75px; */
+        background-color: rgb(20, 20, 20);
+        text-align: center;
+        padding: 24px 16px;
+      }
+      
+      .main-section {
+        display: grid;
+        grid-template-columns: 1.5fr 800px 1fr;
+        grid-template-rows: 75px auto;
+        flex: 1;
+      }
+
+      .top--action--bar {
+        background-color: indigo;
+        grid-column: 1/-1;
+        padding: 12px 24px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      
+      .email-queue {
+        background-color: lightgrey;
+        padding: 36px;
+      }
+      
+      .additional-info {
+        background-color: lightgrey;
+      }
+
+      .general--actions {
+        display: flex;
+        gap: 8px;
+      }
+
+      .btn {
+        font-size: 14x;
+        text-decoration: none;
+        color: #fff;
+        background-color: lightslategray;
+        padding: 4px 8px;
+      }
+
+      .btn--danger {
+        background-color: red;
+      }
+
+      .email--item {
+        background-color: gray;
+        height: 80px;
+        margin-bottom: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
     </style>
   </head>
   <body>
-    
+    <div class="container">
+      <nav class="side--navbar"><h3>Nav</h3></nav>
+      <header class="main-section">
+        <section class="top--action--bar">
+          <div class="general--actions">
+            <a href="#" class="btn">New</a>
+            <a href="#" class="btn">Reply</a>
+            <a href="#" class="btn">Forward</a>
+            <a href="#" class="btn">Mark unread</a>
+          </div>
+          <a href="#" class="btn btn--danger">Trash</a>
+        </section>
+        <section class="email-queue">
+          <div class="email--item"><p class="email">Email 1</p></div>
+          <div class="email--item"><p class="email">Email 2</p></div>
+          <div class="email--item"><p class="email">Email 3</p></div>
+          <div class="email--item"><p class="email">Email 4</p></div>
+          <div class="email--item"><p class="email">Email 5</p></div>
+        </section>
+        <section class="mail-view"><h2>Email view</h2></section>
+        <section class="additional-info"><h2>Additional info</h2></section>
+      </header>
+    </div>
   </body>
 </html>
